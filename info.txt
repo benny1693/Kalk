@@ -1,0 +1,24 @@
+<b>Come scrivere le matrici:</b><br/><br/>
+
+	<i>a</i>, <i>b</i>, <i>c</i> ; <i>d</i>, <i>e</i>, <i>f</i> ; <i>g</i>, <i>h</i>, <i>i</i><br/><br/>
+
+	<i>a</i>    <i>b</i>    <i>c</i><br/>
+	<i>d</i>    <i>e</i>    <i>f</i><br/>
+	<i>g</i>    <i>h</i>    <i>i</i><br/><br/>
+
+ovvero ogni riga è delimitata da un punto e virgola (<b>;</b>) e al suo interno
+gli elementi vengono separati da una virgola (<b>,</b>).<br/><br/>
+
+<b>Operazioni disponibili per tutte le matrici:</b><br/>
+    <u>-Trasp:</u> mostra la trasposta della matrice indicata<br/>
+    <u>-Gauss:</u> mostra il risultato dell'eliminazione di Gauss<br/>
+              della matrice indicata<br/><br/>
+
+<b>Operazioni disponibili per matrici quadrate:</b><br/>
+    <u>-Det:</u> mostra il determinante della matrice indicata<br/>
+    <u>-Inv:</u> mostra l'inversa della matrice indicata<br/><br/>
+
+<b>Operazioni disponibili per vettori:</b><br/>
+    <u>-Norma:</u> mostra la norma del vettore indicato<br/>
+    <u>-Proj:</u> mostra la proiezione del primo vettore sul<br/>
+               secondo
