@@ -24,6 +24,11 @@ bool Parser::controllaStringa() {
 		}
 	}
 
+	if (oper[oper.size() - 1] == ';' && ok){
+		righe--;
+		col = colonne;
+	}
+
 	ok = (col == colonne);
 
 	return ok;

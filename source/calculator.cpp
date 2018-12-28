@@ -1,7 +1,7 @@
 #include "../headers/calculator.h"
 #include "../headers/menu.h"
 
-std::regex Calculator::rx("([ \f\t\v]*[+|-]{0,1}[ \f\t\v]*([0-9]+[.][0-9]+|[0-9]+)[ \f\t\v]*(,|;)[ \f\t\v]*)*[ \f\t\v]*[+|-]{0,1}[ \f\t\v]*([0-9]+[.][0-9]+|[0-9]+)[ \f\t\v]*");
+std::regex Calculator::rx("([ \f\t\v]*[+|-]{0,1}[ \f\t\v]*([0-9]+[.][0-9]+|[0-9]+)[ \f\t\v]*(,|;)[ \f\t\v]*)*[ \f\t\v]*[+|-]{0,1}[ \f\t\v]*([0-9]+[.][0-9]+|[0-9]+)[ \f\t\v]*[;]{0,1}");
 
 Calculator::Calculator(QWidget *parent) : QWidget(parent), controller(new Controller(this)){
     QGridLayout* mainLayout = new QGridLayout;

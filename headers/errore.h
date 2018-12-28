@@ -15,7 +15,7 @@ public:
 
 	string mostraMotivo() const;
 
-    virtual ~Errore() = default;
+	virtual ~Errore() = default;
 };
 
 #endif // ERRORE_H
