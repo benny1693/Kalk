@@ -5,55 +5,68 @@
 #include "buttonop.h"
 #include "controller.h"
 
-#include <QWidget>
+#include <QAction>
+#include <QFile>
+#include <QFileDialog>
 #include <QGridLayout>
 #include <QLineEdit>
-#include <QTextEdit>
-#include <QAction>
 #include <QMenuBar>
 #include <QMessageBox>
-#include <QFileDialog>
-#include <QFile>
 #include <QScrollBar>
+#include <QTextEdit>
 #include <QTextStream>
-#include <QMessageBox>
+#include <QWidget>
 #include <sstream>
 
 class Controller;
 
-class Calculator : public QWidget{
-    Q_OBJECT
+class Calculator : public QWidget {
+	Q_OBJECT
 private:
-    Controller* controller;
+	Controller *controller;
 
-    Button* createButton(const QString&, const char*);
-    ButtonOp* createButtonOp(const QString&, const char*);
-    QLineEdit* firstOperand;
-    QLineEdit* secondOperand;
-    QTextEdit* result;
+	QLineEdit *firstOperand;
+	QLineEdit *secondOperand;
+	QTextEdit *result;
 
-    Button* digitButtons[10];
-    static std::regex rx;
+	Button *digitButtons[10];
+	Button *pointButton;
+	Button *commaButton;
+	Button *semicolonButton;
+	Button *clearButton;
 
-    void addMenu(QGridLayout*);
-    void addScreens(QGridLayout*);
-    void addButtons(QGridLayout*);
+	ButtonOp *plusButton;
+	ButtonOp *minusButton;
+	ButtonOp *timesButton;
+	ButtonOp *projButton;
+	ButtonOp *determinantButton;
+	ButtonOp *inverseButton;
+	ButtonOp *transposeButton;
+	ButtonOp *gaussButton;
+	ButtonOp *equiNumButton;
+
+	void connectOpButtons();
+
+	void addMenu(QGridLayout *);
+	void addScreens(QGridLayout *);
+	void addButtons(QGridLayout *);
 
 private slots:
-    void digitClicked();
-    void clearClicked();
-    void save();
-    void help();
+	void digitClicked();
+	void clearClicked();
+	void save();
+	void help();
 
 public:
-    Calculator(QWidget* =0);
-		~Calculator();
-    void resultOperation(const QString&, const QString&);
-    void warning(const QString&, const QString&);
-    QString getFirstOperand() const;
-    QString getSecondOperand() const;
-    QString getResult() const;
-    std::regex getRegExp() const;
+	Calculator(QWidget * = 0, Controller * = 0);
+	~Calculator();
+	void resultOperation(const QString &, const QString &);
+	void warning(const QString &, const QString &);
+	QString getFirstOperand() const;
+	QString getSecondOperand() const;
+	QString getResult() const;
+	std::regex getRegExp() const;
+	void setController(Controller *);
 };
 
 #endif // CALCULATOR_H

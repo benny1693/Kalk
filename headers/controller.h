@@ -16,7 +16,10 @@ class Controller : public QObject{
 private:
     Modello* model;
     Calculator* view;
-    bool checkOperand(const QString&) const;
+
+		std::regex rx;
+
+		bool checkOperand(const QString&) const;
     bool checkWarningOneOperand() const;
     bool checkWarningTwoOperand() const;
     std::string deleteSpace(std::string);
@@ -34,8 +37,12 @@ public slots:
     void projectionClicked();
 
 public:
-    Controller(Calculator*);
+		Controller(Calculator* = 0, Modello* = 0);
     ~Controller();
+
+		void setModel(Modello*);
+		void setView(Calculator*);
+		void setRegex(string);
 };
 
 #endif // CONTROLLER_H
